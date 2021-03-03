@@ -68,7 +68,7 @@ impl OptionBuilder {
 
 pub fn short_call(strike: f64, current_price: f64, cost: f64) -> f64 {
     match current_price > strike {
-        true => current_price - strike + cost,
+        true => strike - current_price + cost,
         false => cost,
     }
 }
@@ -89,7 +89,7 @@ pub fn short_put(strike: f64, current_price: f64, cost: f64) -> f64 {
 
 pub fn long_put(strike: f64, current_price: f64, cost: f64) -> f64 {
     match current_price < strike {
-        true => current_price - strike - cost,
+        true => strike - current_price - cost,
         false => -cost,
     }
 }
