@@ -4,6 +4,13 @@ version = "0.0.0"
 authors = ["David Holtz <david.richard.holtz@gmail.com>"]
 edition = "2018"
 
+description = "Option contract value at expiration calculations in pure Rust"
+keywords = ["options", "finance", "cashmoney"]
+homepage = "https://github.com/drbh/optioncontracts"
+repository = "https://github.com/drbh/optioncontracts.git"
+readme = "README.md"
+license = "MIT"
+
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]

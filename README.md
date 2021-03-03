@@ -1,6 +1,8 @@
 # option contracts
 
-but written in rust - because rust is awesome
+[![crates.io](https://meritbadge.herokuapp.com/hotpot-db)](https://crates.io/crates/optioncontracts)
+
+written in rust - because rust.
 
 Build options with the [Builder Pattern](https://doc.rust-lang.org/1.0.0/style/ownership/builders.html).
 
