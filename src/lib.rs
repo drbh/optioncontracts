@@ -1,4 +1,5 @@
 #[derive(Debug, Clone)]
+
 pub enum Type {
     Put,
     Call,
@@ -67,31 +68,19 @@ impl OptionBuilder {
 }
 
 pub fn short_call(strike: f64, current_price: f64, cost: f64) -> f64 {
-    match current_price > strike {
-        true => strike - current_price + cost,
-        false => cost,
-    }
+    cost - 0.0f64.max(current_price - strike)
 }
 
 pub fn long_call(strike: f64, current_price: f64, cost: f64) -> f64 {
-    match current_price > strike {
-        true => current_price - strike - cost,
-        false => -cost,
-    }
+    0.0f64.max(current_price - strike) - cost
 }
 
 pub fn short_put(strike: f64, current_price: f64, cost: f64) -> f64 {
-    match current_price < strike {
-        true => current_price - strike + cost,
-        false => cost,
-    }
+    cost - 0.0f64.max(strike - current_price)
 }
 
 pub fn long_put(strike: f64, current_price: f64, cost: f64) -> f64 {
-    match current_price < strike {
-        true => strike - current_price - cost,
-        false => -cost,
-    }
+    0.0f64.max(strike - current_price) - cost
 }
 
 pub fn execute_option(option_input: &OptionContract, current_price: f64) -> f64 {
